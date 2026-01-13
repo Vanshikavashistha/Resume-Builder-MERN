@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { app } from '../../firebase';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+//import { app } from '../../firebase';
+//import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { signInFailure, signInStart, signInSuccess } from '../../redux/userSlice';
@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { BASE_URL } from '../../api';
 import { motion } from 'framer-motion';
 import { CircularProgress } from '@mui/material';
+import { auth, provider } from "../../firebase";
+import { signInWithPopup } from "firebase/auth";
 
 export default function SignIn() {
     const dispatch = useDispatch();
