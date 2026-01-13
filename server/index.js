@@ -19,7 +19,17 @@ mongoDB();
 
 app.use(express.json());
 //middlewares
-app.use(cors());
+//app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://resumebuildermern.vercel.app"
+    ],
+    credentials: true
+  })
+);
+
 
 //routes
 app.use('/api/auth', authRoutes);
@@ -39,7 +49,9 @@ app.use((err, req, res, next) => {
 });
 
 
-app.listen(process.env.PORT, () => {
-     //console.log(`Server is working on https://resume-builder-mern-eight.vercel.app:${process.env.PORT}`);
-    console.log(`Server is working on http://localhost:${process.env.PORT}`);
+const PORT = process.env.PORT || 5001;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
+
