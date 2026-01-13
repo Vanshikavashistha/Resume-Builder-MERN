@@ -23,7 +23,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   //authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
   authDomain: "resume-builder-mern-bea0e.firebaseapp.com",
@@ -37,4 +37,20 @@ const firebaseConfig = {
  export const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
+export const provider = new GoogleAuthProvider();*/
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCLmM0HwhHw4qnFtqBkwgZTiVp6zJpxBBA",
+  authDomain: "resume-builder-mern-bea0e.firebaseapp.com",
+  projectId: "resume-builder-mern-bea0e",
+  storageBucket: "resume-builder-mern-bea0e.firebasestorage.app",
+  messagingSenderId: "52408751948",
+  appId: "1:52408751948:web:8799cc54e1f1bc1d6261e9",
+};
+
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
+
